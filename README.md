@@ -1,12 +1,12 @@
 # odinbook
 
-The Odin Project's [Final Rails Project](http://www.theodinproject.com/ruby-on-rails/final-project)
+The Odin Project's [Final Rails Project](http://www.theodinproject.com/ruby-on-rails/final-project).
 
 This is a fully functional social network in the Facebook mold, implementing the following:
 
-Features already implemented will be *italicized*
+Features already implemented will be *italicized*.
 
-1. PostgreSQL database.
+1. *PostgreSQL database.*
 2. Root sign-in page.
 3. Signing in via [Devise](https://github.com/plataformatec/devise)
 4. Friend requests!
