@@ -1,14 +1,14 @@
 # odinbook
 
-The Odin Project's [Final Rails Project](http://www.theodinproject.com/ruby-on-rails/final-project)
+The Odin Project's [Final Rails Project](http://www.theodinproject.com/ruby-on-rails/final-project).
 
 This is a fully functional social network in the Facebook mold, implementing the following:
 
-Features already implemented will be *italicized*
+Features already implemented will be *italicized*.
 
-1. PostgreSQL database.
+1. *PostgreSQL database.*
 2. Root sign-in page.
-3. Signing in via [Devise](https://github.com/plataformatec/devise)
+3. Signing in via [Devise](https://github.com/plataformatec/devise).
 4. Friend requests!
 5. ...that require confirmation!
 6. ...with notifications in the navbar.
@@ -24,6 +24,6 @@ Features already implemented will be *italicized*
 16. Sign-in via [OmniAuth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview), allowing a user to sign-in through Facebook.
 17. A mailer, sending a welcome e-mail for new users and a password retrieval e-mail.
 18. [SendGrid](https://devcenter.heroku.com/articles/sendgrid) to actually send the e-mails.
-19. Posts that can also accept images!
-20. ...and can be uploaded on from the client computer.
+19. Posts that can accept images!
+20. ...and can also be uploaded from the client's computer.
 21. Polymorphic association, which allows users to comment/like posts and photos without (much) extra code.
