@@ -58,12 +58,24 @@ class UserTest < ActiveSupport::TestCase
     assert_equal reimu.friends.count, 3
   end
   
-  test "should follow a user" do
+  test "should friend a user" do
     reimu  = users(:reimu)
     reisen = users(:reisen)
-    assert_not reimu.friends?(reisen)
+    assert_not reimu.active_friends.include?(reisen)
     reimu.friend(reisen)
-    assert reimu.friends?(reisen), "Reimu isn't friends with Reisen."
-    assert reisen.friends?(reimu), "Reisen isn't friends with Reimu."
+    assert reimu.active_friends.include?(reisen)
+    assert reisen.passive_friends.include?(reimu)
+  end
+  
+  test "should unfriend a user" do
+    reimu  = users(:reimu)
+    marisa = users(:marisa)
+    sanae  = users(:sanae)
+    assert reimu.active_friends.include?(marisa)
+    reimu.unfriend(marisa)
+    assert_not reimu.active_friends.include?(marisa)
+    assert reimu.passive_friends.include?(sanae)
+    reimu.unfriend(sanae)
+    assert_not reimu.passive_friends.include?(sanae)
   end
 end
