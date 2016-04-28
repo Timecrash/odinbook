@@ -1,5 +1,5 @@
 class ChangeAcceptedColumnDefault < ActiveRecord::Migration
   def change
-    change_column_default :users, :accepted, false
+    change_column_default :friendships, :accepted, false
   end
 end
