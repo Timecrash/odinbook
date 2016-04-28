@@ -1,0 +1,9 @@
+reimu:
+  name: Reimu Hakurei
+  email: reimu@gensokyo.net
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'hakurei') %>
+  
+marisa:
+  name: Marisa Kirisame
+  email: marisa@gensokyo.net
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'kirisame') %>
