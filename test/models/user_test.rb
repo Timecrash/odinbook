@@ -62,6 +62,7 @@ class UserTest < ActiveSupport::TestCase
     reimu  = users(:reimu)
     reisen = users(:reisen)
     assert_not reimu.friends?(reisen)
+    assert_not reisen.friends?(reimu)
     #Reimu initiates, but Reisen hasn't accepted.
     reimu.friend(reisen)
     assert_not reimu.friends?(reisen)
@@ -76,20 +77,21 @@ class UserTest < ActiveSupport::TestCase
     reimu  = users(:reimu)
     marisa = users(:marisa)
     sanae  = users(:sanae)
-    assert reimu.active_friends.include?(marisa)
+    assert reimu.friends?(marisa) #Reimu friended Marisa, so it's active.
     reimu.unfriend(marisa)
-    assert_not reimu.active_friends.include?(marisa)
-    assert reimu.passive_friends.include?(sanae)
+    assert_not reimu.friends?(marisa)
+    assert reimu.friends?(sanae) #Sanae friended Reimu, so it's passive.
     reimu.unfriend(sanae)
-    assert_not reimu.passive_friends.include?(sanae)
+    assert_not reimu.friends?(sanae)
   end
   
   test "friend confirmation" do
     marisa = users(:marisa)
-    #sanae = users(:sanae)
+    reisen = users(:reisen)
     assert_equal marisa.friends.count, 2
-    #assert_difference 'marisa.friends.count', 1 do
-    #  marisa.accept_friendship(reisen)
-    #end
+    assert_equal reisen.friend_requests.count, 1
+    reisen.accept_friendship(marisa)
+    assert_equal marisa.friends.count, 3
+    assert_equal reisen.friend_requests.count, 0
   end
 end
