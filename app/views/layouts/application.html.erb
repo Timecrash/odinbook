@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.name %>.
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% end %>
+</div>
+
 <% flash.each do |message_type, message| %>
   <%= content_tag(:div, message, class: "flash", id: message_type) %>
 <% end %>
