@@ -7,3 +7,18 @@ marisa:
   name: Marisa Kirisame
   email: marisa@gensokyo.net
   encrypted_password: <%= Devise::Encryptor.digest(User, 'kirisame') %>
+  
+sakuya:
+  name: Sakuya Izayoi
+  email: sakuya@gensokyo.net
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'izayoi') %>
+
+sanae:
+  name: Sanae Kochiya
+  email: sanae@gensokyo.net
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'kochiya') %>
+
+reisen:
+  name: Reisen Udongein Inaba
+  email: reisen@gensokyo.net
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'udonge') %>

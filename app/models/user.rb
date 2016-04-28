@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   before_save :downcase_email
   
-  has_many :active_friendships, class_name:  "Friendship",
-                                foreign_key: "friender_id",
-                                dependent: :destroy
+  has_many :active_friendships,  class_name:  "Friendship",
+                                 foreign_key: "friender_id",
+                                 dependent: :destroy
   has_many :passive_friendships, class_name:  "Friendship",
                                  foreign_key: "friended_id",
                                  dependent: :destroy
