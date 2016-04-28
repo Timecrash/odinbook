@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
     friends.include?(user)
   end
   
+  def friend_requests
+    passive_friendships.where("accepted = ?", false)
+  end
+  
   private
   
   def downcase_email
