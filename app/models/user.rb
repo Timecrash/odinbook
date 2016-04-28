@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   
   def friends
-    active_friends + passive_friends
+    active_friends.where("accepted = ?", true) + passive_friends.where("accepted = ?", true)
   end
   
   def friend(user)
