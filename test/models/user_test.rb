@@ -52,4 +52,18 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_equal mixed_case_email.downcase, @user.reload.email
   end
+  
+  test "friends method returns both passive and active friends" do
+    reimu = users(:reimu)
+    assert_equal reimu.friends.count, 3
+  end
+  
+  test "should follow a user" do
+    reimu  = users(:reimu)
+    reisen = users(:reisen)
+    assert_not reimu.friends?(reisen)
+    reimu.friend(reisen)
+    assert reimu.friends?(reisen), "Reimu isn't friends with Reisen."
+    assert reisen.friends?(reimu), "Reisen isn't friends with Reimu."
+  end
 end

@@ -11,19 +11,29 @@ class User < ActiveRecord::Base
   has_many :passive_friendships, class_name:  "Friendship",
                                  foreign_key: "friended_id",
                                  dependent: :destroy
-  has_many :active_friends,  through: :active_friendships,  source: :friender
-  has_many :passive_friends, through: :passive_friendships, source: :friended
+  has_many :active_friends,  through: :active_friendships,  source: :friended
+  has_many :passive_friends, through: :passive_friendships, source: :friender
   
   validates :name, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
-  format: { with: VALID_EMAIL_REGEX },
-  uniqueness: { case_sensitive: false }
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
   
   def friends
-    friend_list = active_friends
-    friend_list << passive_friends
-    friend_list.uniq!
+    active_friends + passive_friends
+  end
+  
+  def friend(user)
+    self.active_friendships.create(friended_id: user.id)
+  end
+  
+  def unfriend(user)
+    friends.find(user.id).destroy
+  end
+  
+  def friends?(user)
+    friends.include?(user)
   end
   
   private
