@@ -8,7 +8,7 @@ Features already implemented will be *italicized*.
 
 1. *PostgreSQL database.*
 2. *Root sign-in page.*
-3. Signing in via [Devise](https://github.com/plataformatec/devise).
+3. *Signing in via [Devise](https://github.com/plataformatec/devise).*
 4. Friend requests!
 5. ...that require confirmation!
 6. ...with notifications in the navbar.
