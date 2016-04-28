@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
   has_many :active_friends,  through: :active_friendships,  source: :friended
   has_many :passive_friends, through: :passive_friendships, source: :friender
   
-  validates :name, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
