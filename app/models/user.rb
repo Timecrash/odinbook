@@ -24,16 +24,20 @@ class User < ActiveRecord::Base
     active_friends.where("accepted = ?", true) + passive_friends.where("accepted = ?", true)
   end
   
-  def friend(user)
-    active_friendships.create(friended_id: user.id)
+  def friend(recipient)
+    active_friendships.create(friended_id: recipient.id)
   end
   
-  def unfriend(user)
-    if active = active_friendships.find_by(friended_id: user.id)
+  def unfriend(recipient)
+    if active = active_friendships.find_by(friended_id: recipient.id)
       active.destroy
-    elsif passive = passive_friendships.find_by(friender_id: user.id)
+    elsif passive = passive_friendships.find_by(friender_id: recipient.id)
       passive.destroy
     end
+  end
+  
+  def accept_friendship(requester)
+    passive_friendships.find_by(friender_id: requester.id).accept
   end
   
   def friends?(user)
