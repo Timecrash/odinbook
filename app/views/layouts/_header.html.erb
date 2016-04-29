@@ -1,0 +1,31 @@
+<header class='navbar navbar-fixed-top navbar-inverse'>
+  <div class="container">
+    <%= link_to "odinbook", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.first_name, user_path(current_user) %>
+          <li><%= link_to "Index", users_path %></li>
+          <% if current_user.friend_requests > 0 %>
+            <li>Requests (<%= current_user.friend_requests.count %>)</li>
+          <% else %>
+            <li><%= link_to "Requests", "#" %></li>
+          <% end %>
+          <li class="dropwdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+              <li><%= link_to "Change Password", edit_user_password_path %></li>
+              <li><%= link_to "Sign Out", destroy_user_dession_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Sign In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
