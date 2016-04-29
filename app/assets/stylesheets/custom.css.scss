@@ -21,13 +21,32 @@ textarea {
   resize: vertical;
 }
 
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
 /* header */
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #d6d6d6;
+  color: #e5e5e5;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -39,12 +58,12 @@ textarea {
 }
 
 .navbar {
-  background-color: #40005a;
+  background-image: linear-gradient(#66327a, #40005a);
 }
 
 .nav.navbar-nav.navbar-right {
   li a {
-    color: #d6d6d6;
+    color: #e5e5e5;
     &:hover {
       color: #ecdbff;
       text-decoration: none;
@@ -73,6 +92,32 @@ footer {
   }
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#user_remember_me {
+  width: auto;
+  margin-left: 0;
+}
 
 
 /* miscellaneous */
