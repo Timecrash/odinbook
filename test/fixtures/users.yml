@@ -1,24 +1,29 @@
 reimu:
-  name: Reimu Hakurei
+  first_name: Reimu
+  last_name: Hakurei
   email: reimu@gensokyo.net
   encrypted_password: <%= Devise::Encryptor.digest(User, 'hakurei') %>
   
 marisa:
-  name: Marisa Kirisame
+  first_name: Marisa
+  last_name: Kirisame
   email: marisa@gensokyo.net
   encrypted_password: <%= Devise::Encryptor.digest(User, 'kirisame') %>
   
 sakuya:
-  name: Sakuya Izayoi
+  first_name: Sakuya
+  last_name: Izayoi
   email: sakuya@gensokyo.net
   encrypted_password: <%= Devise::Encryptor.digest(User, 'izayoi') %>
 
 sanae:
-  name: Sanae Kochiya
+  first_name: Sanae
+  last_name: Kochiya
   email: sanae@gensokyo.net
   encrypted_password: <%= Devise::Encryptor.digest(User, 'kochiya') %>
 
 reisen:
-  name: Reisen Udongein Inaba
+  first_name: Reisen
+  last_name: Udongein Inaba
   email: reisen@gensokyo.net
   encrypted_password: <%= Devise::Encryptor.digest(User, 'udonge') %>

@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   
+  def name
+    "#{first_name} #{last_name}"
+  end
+  
   def friends
     active_friends.where("accepted = ?", true) + passive_friends.where("accepted = ?", true)
   end
