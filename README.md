@@ -20,7 +20,7 @@ Features already implemented will be *italicized*.
 12. A Facebook-esque Timeline, with recent posts made by the current user and their friends.
 13. User profiles, with a Gravatar photo.
 14. Profiles should **show** their profile info, photo, and posts.
-15. An **index** containing users, with buttons for sending/accepting friend requests.
+15. An **index** containing users, with buttons for sending/accepting friend requests and pagination.
 16. Sign-in via [OmniAuth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview), allowing a user to sign-in through Facebook.
 17. A mailer, sending a welcome e-mail for new users and a password retrieval e-mail.
 18. [SendGrid](https://devcenter.heroku.com/articles/sendgrid) to actually send the e-mails.
