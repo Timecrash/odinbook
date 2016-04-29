@@ -11,8 +11,8 @@ Features already implemented will be *italicized*.
 3. *Signing in via [Devise](https://github.com/plataformatec/devise).*
 4. *Friend requests!*
 5. *...that require confirmation!*
-6. ...with notifications in the navbar.
-7. Also, a navbar.
+6. *...with notifications in the navbar.*
+7. *Also, a navbar.*
 8. Posts!
 9. ...that can be liked!
 10. ...and commented upon!
