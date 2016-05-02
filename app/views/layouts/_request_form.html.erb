@@ -1,5 +1,4 @@
-<%= form_for(current_user.passive_friendships.find_by(friender_id: friender.id),
-             html: { method: :patch }) do |f| %>
+<%= form_for(current_user.passive_friendships.find_by(friender_id: friender.id)) do |f| %>
   <%= link_to friender.name, user_path(friender) %>
   <%= f.submit "✖", class: "btn btn-xs btn-danger", name: 'ignore' %>
   <%= f.submit "✔", class: "btn btn-xs btn-success" %>
