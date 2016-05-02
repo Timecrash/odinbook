@@ -9,7 +9,7 @@
           <% if current_user.friend_requests.count > 0 %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Requests (<span id="requests"><%= current_user.friend_requests.count %></span>) <b class="caret"></b>
+                Requests <span id="requests">(<%= current_user.friend_requests.count %>)</span> <b class="caret"></b>
               </a>
               <ul class="dropdown-menu" id="friend-requests">
                 <% current_user.friend_requests.each do |req| %>

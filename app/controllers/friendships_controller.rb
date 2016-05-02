@@ -10,6 +10,6 @@ class FriendshipsController < ApplicationController
     else
       friendship.accept
     end
-    redirect_to request.path
+    redirect_to :back
   end
 end
