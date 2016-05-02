@@ -124,6 +124,22 @@ input {
   margin-left: 0;
 }
 
+#accept {
+  position: relative;
+}
+
+#ignore {
+  position: relative;
+}
+
+.btn-xs {
+  width: auto;
+  //display: inline;
+}
+
+.dropdown-menu {
+  width: auto;
+}
 
 /* miscellaneous */
 
