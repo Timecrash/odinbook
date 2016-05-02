@@ -1,0 +1,7 @@
+<%= form_for(current_user.passive_friendships.find_by(friender_id: friender.id),
+             html: { method: :patch },
+             remote: true) do |f| %>
+  <%= f.submit "✔", class: "btn btn-xs btn-success" %>
+  <%= f.submit "✖", class: "btn btn-xs btn-danger", name: 'ignore' %>
+<% end %>
+  

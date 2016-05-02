@@ -15,8 +15,7 @@
                 <% current_user.friend_requests.each do |req| %>
                   <li>
                     <%= link_to req.friender.name, user_path(req.friender) %>
-                    <span id="accept"><%= render 'layouts/accept', friender: req.friender %></span>
-                    <span id="ignore"><%= render 'layouts/ignore', friender: req.friender %></span>
+                    <%= render 'layouts/request_form', friender: req.friender %>
                     </li>
                 <% end %>
               </ul>
