@@ -4,9 +4,9 @@ class FriendshipsController < ApplicationController
   
   def update
     friendship = Friendship.find(params[:id])
-    @user      = friendship.friender
+    user       = friendship.friender
     if params[:ignore]
-      current_user.unfriend(@user)
+      current_user.unfriend(user)
     else
       friendship.accept
     end
