@@ -11,12 +11,11 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Requests <span id="requests">(<%= current_user.friend_requests.count %>)</span> <b class="caret"></b>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" id="friend-requests">
                 <% current_user.friend_requests.each do |req| %>
                   <li>
-                    <%= link_to req.friender.name, user_path(req.friender) %>
                     <%= render 'layouts/request_form', friender: req.friender %>
-                    </li>
+                  </li>
                 <% end %>
               </ul>
             </li>
