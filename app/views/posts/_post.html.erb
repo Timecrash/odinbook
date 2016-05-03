@@ -1,0 +1,6 @@
+<li id="post-<%= post.id %>">
+  <!-- Code for displaying a Gravatar -->
+  <span class="user"><%= link_to post.user.name, post.user %></span>
+  <span class="timestamp"><%= post.created_at.strftime("%b %e at %l:%M %p") %></span>
+  <span class="text"><%= post.text %></span>
+</li>

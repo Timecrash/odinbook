@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get :friends
     end
   end
-  resources :friendships, only: [:create, :update]
+  resources :friendships, only: [:create, :update, :destroy]
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
