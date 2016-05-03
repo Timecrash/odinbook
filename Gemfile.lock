@@ -68,6 +68,8 @@ GEM
     faker (1.4.2)
       i18n (~> 0.5)
     ffi (1.9.10)
+    figaro (1.1.1)
+      thor (~> 0.14)
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -217,6 +219,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   faker (= 1.4.2)
+  figaro
   guard-minitest (= 2.3.1)
   jbuilder (~> 2.0)
   jquery-rails
