@@ -1,3 +1,16 @@
 <% provide(:title, "All users") %>
 
-<h1>User Index</h1>
+<h1>All Users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <!-- Code for Gravatar image -->
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>
