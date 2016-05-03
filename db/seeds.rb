@@ -15,3 +15,13 @@ User.create!(first_name:            "Matt",
                password:              password,
                password_confirmation: password)
 end
+
+matt = User.first
+User.second.friend(matt)
+User.last.friend(matt)
+
+users = User.order(:created_at).take(6)
+50.times do
+  text = Faker::Lorem.paragraph
+  users.each { |user| user.posts.create!(text: text) }
+end
