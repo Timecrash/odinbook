@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, path: ''
-  root "users#index"
+  root "posts#index"
   resources :users, only: [:index, :show] do
     member do
       get :friends
