@@ -2,20 +2,20 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(first_name: "Reimu", last_name: "Hakurei", email: "reimu@gensokyo.net",
+    @user = User.new(first_name: "Yuyuko", last_name: "Saigyouji", email: "yuyuko@gensokyo.net",
                      password: 'password', password_confirmation: 'password')
   end
   
   test "first and last names should be present" do
     @user.first_name = nil
     assert_not @user.valid?
-    @user.first_name = "a"
+    @user.first_name = "Yuyuko"
     @user.last_name = nil
     assert_not @user.valid?
   end
   
   test "name method should return full name" do
-    assert_equal @user.name, "Reimu Hakurei"
+    assert_equal @user.name, "Yuyuko Saigyouji"
   end
   
   test "e-mail should be present" do
@@ -100,5 +100,13 @@ class UserTest < ActiveSupport::TestCase
     reisen.accept_friendship(marisa)
     assert_equal marisa.friends.count, 3
     assert_equal reisen.friend_requests.count, 0
+  end
+  
+  test "authored post should be destroyed upon user deletion" do
+    @user.save!
+    @user.posts.create!(text: "asdf")
+    assert_difference 'Post.count', -1 do
+      @user.destroy
+    end
   end
 end

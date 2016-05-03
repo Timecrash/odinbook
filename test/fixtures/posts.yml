@@ -1,9 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  text: MyString
+remilia:
+  text: "The Embodiment of Scarlet Devil"
   user_id: 1
+  created_at: <%= 10.minutes.ago %>
 
-two:
-  text: MyString
+yuyuko:
+  text: "Perfect Cherry Blossom"
   user_id: 1
+  created_at: <%= 3.years.ago %>
+
+eirin:
+  text: "Imperishable Night"
+  user_id: 1
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  text: "Phantasmagoria of Flower View"
+  user_id: 1
+  created_at: <%= Time.now %>

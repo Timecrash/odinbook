@@ -2,8 +2,7 @@ require 'test_helper'
 
 class PostTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(first_name: "Reimu", last_name: "Hakurei", email: "reimu@gensokyo.net",
-                       password: 'password', password_confirmation: 'password')
+    @user = users(:reimu)
     @post = @user.posts.build(text: "Hello, world!")
   end
   
@@ -15,5 +14,9 @@ class PostTest < ActiveSupport::TestCase
   test "posts should have an author" do
     authorless_post = Post.new(text: "Doesn't matter.")
     assert_not authorless_post.valid?
+  end
+  
+  test "order should be most recent first" do
+    assert_equal posts(:most_recent), Post.first
   end
 end
