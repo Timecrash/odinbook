@@ -159,6 +159,15 @@ input {
   @include box_sizing;
 }
 
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
 /* flash */
 
 .alert-error {
