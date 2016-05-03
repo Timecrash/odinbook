@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
                                  dependent: :destroy
   has_many :active_friends,  through: :active_friendships,  source: :friended
   has_many :passive_friends, through: :passive_friendships, source: :friender
+  has_many :posts,           dependent: :destroy
   
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, length: { maximum: 255 },

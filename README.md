@@ -13,7 +13,7 @@ Features already implemented will be *italicized*.
 5. *...that require confirmation!*
 6. *...with notifications in the navbar.*
 7. *Also, a navbar.*
-8. Posts!
+8. User created posts!
 9. ...that can be liked!
 10. ...and commented upon!
 11. Posts should display content, the author, comments, and likes.
