@@ -4,8 +4,8 @@
   <span class="timestamp"><%= link_to post.created_at.strftime("%b %e at %l:%M %p"), post_path(post) %></span>
   <span class="text"><%= post.text %></span>
   <span class="options">
-    <!-- Code for likes -->
-    <!-- Code for comments -->
+    <%= link_to "Likes", "#" %> | 
+    <%= link_to "Comments ", "#" %> | 
     <%= link_to "Edit", edit_post_path(post) %> | 
     <%= link_to "Delete", post_path(post), data: { confirm: "Are you sure you'd like to delete this post?" },
                           method: :delete %>

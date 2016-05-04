@@ -134,7 +134,7 @@ input {
 }
 
 #friend-requests form {
-  min-width: 200px;
+  min-width: 250px;
 }
 
 /* Users index */
@@ -171,7 +171,7 @@ input {
       padding: 5px 0;
     }
   }
-  .timestamp {
+  .timestamp, .options {
     a { color: inherit; }
     font-size: small;
     font-style: italic;
@@ -183,6 +183,9 @@ input {
     float: left;
     margin-right: 10px;
     margin-top: 5px;
+  }
+  .options {
+    margin-top: 3px;
   }
 }
 
