@@ -10,15 +10,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
   
-  def edit
-    @post = Post.find(params[:id])
-  end
-  
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to request.referrer || root_url
+      redirect_to :back || @post
     else
       render root_url
     end
@@ -26,12 +22,8 @@ class PostsController < ApplicationController
   
   def update
     if @post.update(post_params)
-      flash.now[:success] = "Post updated!"
-      #respond_to do |format|
-      #  format.html { redirect_to request.referrer || root_url }
-      #  format.js
-      #end
-      redirect_to request.referrer || @post
+      flash[:success] = "Post updated!"
+      redirect_to :back || @post
     else
       flash.now[:error] = "Invalid information."
     end
