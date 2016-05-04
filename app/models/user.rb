@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
   
+  #To refactor: add posts for friends.
   def timeline
     self.posts
   end

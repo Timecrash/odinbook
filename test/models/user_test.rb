@@ -109,4 +109,9 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+  
+  test "timeline should return a user's posts" do
+    reimu = users(:reimu)
+    assert_equal reimu.timeline, reimu.posts
+  end
 end
