@@ -6,8 +6,11 @@
   <span class="options">
     <%= link_to "Likes", "#" %> | 
     <%= link_to "Comments ", "#" %> | 
-    <%= link_to "Edit", edit_post_path(post) %> | 
+    <a href="#" class="edit_link">Edit</a> | 
     <%= link_to "Delete", post_path(post), data: { confirm: "Are you sure you'd like to delete this post?" },
                           method: :delete %>
+    <div class="edit_form">
+      <%= render 'edit_form', post: post %>
+    </div>
   </span>
 </li>

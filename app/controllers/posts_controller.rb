@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   
   #Gets the user's feed, instead of all posts.
   def index
+    #@posts = current_user.timeline
   end
   
   def show
@@ -25,11 +26,14 @@ class PostsController < ApplicationController
   
   def update
     if @post.update(post_params)
-      flash[:success] = "Post updated!"
-      redirect_to @post
+      flash.now[:success] = "Post updated!"
+      #respond_to do |format|
+      #  format.html { redirect_to request.referrer || root_url }
+      #  format.js
+      #end
+      redirect_to request.referrer || @post
     else
-      flash[:error] = "Invalid information."
-      render 'edit'
+      flash.now[:error] = "Invalid information."
     end
   end
   

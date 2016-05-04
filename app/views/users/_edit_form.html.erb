@@ -1,0 +1,4 @@
+<%= form_for post, remote: true do |f| %>
+  <%= f.text_area :text %>
+  <%= f.submit "Update", class: "btn btn-sm btn-primary" %>
+<% end %>
