@@ -186,6 +186,8 @@ input {
   }
   .options {
     margin-top: 3px;
+    font-weight: bold;
+    #post_text { font-weight: normal; }
   }
   .edit_form {
     display: none;

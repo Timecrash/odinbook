@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   
   #Gets the user's feed, instead of all posts.
   def index
-    #@posts = current_user.timeline
+    @posts = current_user.timeline.paginate(page: params[:page])
   end
   
   def show

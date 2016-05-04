@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
   
+  def timeline
+    self.posts
+  end
+  
   def friends
     active_friends.where("accepted = ?", true) + passive_friends.where("accepted = ?", true)
   end
