@@ -1,5 +1,8 @@
 class FriendshipsController < ApplicationController
   def create
+    @user = User.find(params[:user])
+    current_user.friend(@user)
+    redirect_to :back
   end
   
   def update

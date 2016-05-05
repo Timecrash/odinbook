@@ -1,10 +1,5 @@
 <li>
   <%= avatar(user) %>
   <%= link_to user.name, user %>
-  <% if current_user.friends?(user) %>
-    <br />
-    <%= link_to "Unfriend this User", friendship_path(current_user.get_friendship(user)),
-                                      data: { confirm: "Are you sure you want to unfriend this user?" },
-                                      method: :delete %>
-  <% end %>
+  <%= render 'shared/friend_form', user: user %>
 </li>

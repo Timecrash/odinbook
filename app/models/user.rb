@@ -65,6 +65,10 @@ class User < ActiveRecord::Base
     friends.include?(user)
   end
   
+  def pending_friend(friend)
+    passive_friendships.where(["accepted = ? and friender_id = ?", false, friend.id])
+  end
+  
   def friend_requests
     passive_friendships.where("accepted = ?", false)
   end

@@ -2,16 +2,7 @@
 
 <div class="row">
   <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= avatar(current_user) %>
-        <%= current_user.name %>
-      </h1>
-      <%= link_to pluralize(current_user.friends.count, "friend"), friends_user_path(current_user) %>
-    </section>
-    <section class="post_form">
-      <%= render 'shared/post_form' %>
-    </section>
+    <%= render 'shared/user_info', user: current_user %>
   </aside>
   <div class="col-md-8">
     <% if current_user.timeline.any? %>
