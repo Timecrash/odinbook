@@ -6,10 +6,20 @@ class FriendshipsController < ApplicationController
     friendship = Friendship.find(params[:id])
     user       = friendship.friender
     if params[:ignore]
+      flash[:notice] = "You've ignored #{user.first_name}'s friend request."
       current_user.unfriend(user)
     else
+      flash[:success] = "You are now friends with #{user.first_name}!"
       friendship.accept
     end
+    redirect_to :back
+  end
+  
+  def destroy
+    friendship = Friendship.find(params[:id])
+    user = friendship.friender == current_user ? friendship.friended : friendship.friender
+    current_user.unfriend(user)
+    flash[:success] = "User unfriended."
     redirect_to :back
   end
 end

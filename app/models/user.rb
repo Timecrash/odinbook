@@ -41,11 +41,19 @@ class User < ActiveRecord::Base
     active_friendships.create(friended_id: recipient.id)
   end
   
-  def unfriend(recipient)
-    if active = active_friendships.find_by(friended_id: recipient.id)
+  def unfriend(friend)
+    if active = active_friendships.find_by(friended_id: friend.id)
       active.destroy
-    elsif passive = passive_friendships.find_by(friender_id: recipient.id)
+    elsif passive = passive_friendships.find_by(friender_id: friend.id)
       passive.destroy
+    end
+  end
+  
+  def get_friendship(friend)
+    if active = active_friendships.find_by(friended_id: friend.id)
+      active
+    elsif passive = passive_friendships.find_by(friender_id: friend.id)
+      passive
     end
   end
   

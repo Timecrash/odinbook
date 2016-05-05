@@ -232,29 +232,29 @@ span.picture {
 /* flash */
 
 .alert-error {
-    background-color: #f2dede;
-    border-color: #eed3d7;
-    color: #b94a48;
+    background-image: linear-gradient(to bottom,#f2dede 0,#e7c3c3 100%);
+    border-color: #dca7a7;
+    color: #a94442;
     text-align: left;
  }
 
 .alert-alert {
-    background-color: #f2dede;
-    border-color: #eed3d7;
-    color: #b94a48;
+    background-image: linear-gradient(to bottom,#fcf8e3 0,#f8efc0 100%);
+    border-color: #f5e79e;
+    color: #8a6d3b;
     text-align: left;
  }
 
 .alert-success {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #468847;
+    background-image: linear-gradient(to bottom,#dff0d8 0,#c8e5bc 100%);
+    border-color: #b2dba1;
+    color: #3c763d;
     text-align: left;
  }
 
 .alert-notice {
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-    color: #468847;
+    background-image: linear-gradient(to bottom,#d9edf7 0,#b9def0 100%);
+    border-color: #9acfea;
+    color: #31708f;
     text-align: left;
  }
