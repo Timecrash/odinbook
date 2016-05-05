@@ -17,6 +17,8 @@
         <%= render @friends %>
       </ul>
       <%= will_paginate @friends %>
+    <% else %>
+      <h3><%= @user.first_name %> doesn't have any friends.</h3>
     <% end %>
   </div>
 </div>

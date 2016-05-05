@@ -17,10 +17,8 @@
         <%= render @posts %>
       </ol>
       <%= will_paginate @posts %>
+    <% else %>
+      <h3><%= @user.first_name %> hasn't posted yet</h3>
     <% end %>
   </div>
 </div>
-
-
-
-
