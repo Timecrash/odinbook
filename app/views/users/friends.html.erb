@@ -1,0 +1,22 @@
+<% provide(:title, "#{@user.first_name}'s Friends") %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= avatar(@user) %>
+        <%= "#{@user.first_name}'s Friends" %>
+      </h1>
+    </section>
+    <!-- Friend request acceptance -->
+  </aside>
+  <div class="col-md-8">
+    <% if @user.friends.any? %>
+      <h3>Friends (<%= @user.friends.count %>)</h3>
+      <ul class="friends">
+        <%= render @friends %>
+      </ul>
+      <%= will_paginate @friends %>
+    <% end %>
+  </div>
+</div>
