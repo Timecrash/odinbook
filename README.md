@@ -23,5 +23,6 @@ This is a fully functional social network in the Facebook mold, implementing the
 17. A mailer, sending a welcome e-mail for new users and a password retrieval e-mail.
 18. [SendGrid](https://devcenter.heroku.com/articles/sendgrid) to actually send the e-mails.
 19. Posts that can accept images!
-20. ...and can also be uploaded from the client's computer.
+20. ...and can also be uploaded from the client's computer via [Paperclip](https://github.com/thoughtbot/paperclip).
 21. Polymorphic association, which allows users to comment/like posts and photos without (much) extra code.
+22. CSS styling throughout!
