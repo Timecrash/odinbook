@@ -3,8 +3,12 @@ module UsersHelper
   #Favors the former.
   def avatar(user, options = { size: 80 })
     size = options[:size]
-    #image_tag(user.avatar.url, size: size) if user.avatar.nil?
-    gravatar_for(user, size)
+    ##
+    #if !user.avatar.nil?
+    #  image_tag(user.avatar.url, size: size) if !user.avatar.nil?
+    #else
+      gravatar_for(user, size)
+    #end
   end
   
   def gravatar_for(user, size = 80)
