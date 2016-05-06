@@ -2,21 +2,25 @@
   <% if current_user.friends?(user) %>
     <br />
     <%= form_for current_user.get_friendship(user), method: :delete do |f| %>
-      <%= f.submit "Unfriend this user", class: "btn btn-link",
+      <%= f.submit "Unfriend this user", class: "btn btn-sm btn-danger",
                                          data: { confirm: "Are you sure you want to unfriend this user?" } %>
     <% end %>
-  <% elsif !current_user.pending_friend(user).empty? %>
+  <% elsif !current_user.pending_friend(user).nil? %>
     <br />
-    <%= form_for current_user.pending_friend(user).first do |f| %>
-      <%= f.submit "Ignore friend request", class: "btn btn-link", name: 'ignore' %>
+    <%= form_for current_user.pending_friend(user) do |f| %>
+      <%= f.submit "Accept friend request", class: "btn btn-sm btn-success" %>
       <br />
-      <%= f.submit "Accept friend request", class: "btn btn-link" %>
+      <%= f.submit "Ignore friend request", class: "btn btn-sm btn-default", name: 'ignore' %>
     <% end %>
   <% else %>
     <br />
-    <%= form_for current_user.active_friendships.build do |f| %>
-      <div><%= hidden_field_tag :user, user.id %></div>
-      <%= f.submit "Add friend", class: "btn btn-link" %>
+    <% if user.pending_friend(current_user).nil? %>
+      <%= form_for current_user.active_friendships.build do |f| %>
+        <div><%= hidden_field_tag :user, user.id %></div>
+        <%= f.submit "Add friend", class: "btn btn-sm btn-primary" %>
+      <% end %>
+    <% else %>
+      <span class="label label-default">Friend request pending</span>
     <% end %>
   <% end %>
 <% end %>

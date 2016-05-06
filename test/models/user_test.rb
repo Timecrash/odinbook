@@ -114,4 +114,10 @@ class UserTest < ActiveSupport::TestCase
     reimu = users(:reimu)
     assert_equal reimu.timeline, reimu.posts
   end
+  
+  test "pending_friend should return any pending friend requests" do
+    reisen = users(:reisen)
+    marisa = users(:marisa)
+    assert_not reisen.pending_friend(marisa).nil?
+  end
 end

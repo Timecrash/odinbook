@@ -8,6 +8,16 @@
         <%= "#{@user.first_name}'s Friends" %>
       </h1>
     </section>
+    <% if @user.friend_requests.any? %>
+      <section class="friend_requests">
+        <h1>Pending Requests (<%= @user.friend_requests.count %>)</h1>
+        <ul class="pending">
+          <% @user.friend_requests.each do |req| %>
+            <%= render 'user', user: req.friender %>
+          <% end %>
+        </ul>
+      </section>
+    <% end %>
     <!-- Friend request acceptance -->
   </aside>
   <div class="col-md-8">
