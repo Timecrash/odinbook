@@ -178,8 +178,15 @@ input {
   }
 }
 
-.btn-sm, .label-default {
+.btn-sm {
   width: 140px;
+}
+
+#pending {
+  float: left;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 8px 23px;
 }
 
 /* posts */

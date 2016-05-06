@@ -20,7 +20,7 @@
         <%= f.submit "Add friend", class: "btn btn-sm btn-primary" %>
       <% end %>
     <% else %>
-      <span class="label label-default">Friend request pending</span>
+      <span class="label label-default" id="pending">Request pending</span>
     <% end %>
   <% end %>
 <% end %>
