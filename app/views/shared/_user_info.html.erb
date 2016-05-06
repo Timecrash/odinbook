@@ -8,4 +8,13 @@
 <section class="post_form">
   <%= render 'shared/post_form' %>
 </section>
-<!-- Friends -->
+<section class="friend_map">
+  <% if user.friends.any? %>
+    <div class="user_avatars">
+      <h4><%= user.first_name %>'s Friends</h4>
+      <% user.friends.each do |friend| %>
+            <%= link_to avatar(friend, size: 40), friend %>
+      <% end %>
+    </div>
+  <% end %>
+</section>
