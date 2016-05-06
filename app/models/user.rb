@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :active_friends,  through: :active_friendships,  source: :friended
   has_many :passive_friends, through: :passive_friendships, source: :friender
   has_many :posts,           dependent: :destroy
+  has_many :likes,           dependent: :destroy
   
   validates :first_name, presence: true
   validates :last_name,  presence: true
