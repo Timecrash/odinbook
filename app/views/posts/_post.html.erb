@@ -4,7 +4,12 @@
   <span class="timestamp"><%= link_to post.created_at.strftime("%b %e at %l:%M %p"), post_path(post) %></span>
   <span class="text"><%= post.text %></span>
   <span class="options">
-    <%= link_to "Likes", "#" %> | 
+    <% if like = current_user.likes.find_by(post_id: post.id) %>
+      <%= link_to "Unlike (#{post.likes.count})", like_path(like), method: :delete %>
+    <% else %>
+      <%= link_to "Like (#{post.likes.count})", likes_path(post_id: post.id),
+                                                method: :post %>
+    <% end %> | 
     <%= link_to "Comments", "#" %>
     <% if post.user == current_user %>
        | <a href="#" class="edit_link">Edit</a> | 

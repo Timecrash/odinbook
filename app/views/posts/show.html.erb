@@ -6,7 +6,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-3 likes">
     <h3 class-"text-center">Likes (<%= @post.likes.count %>)</h3>
       <% if @post.likes.any? %>
         <% @post.likes.each do |like| %>

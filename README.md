@@ -14,7 +14,7 @@ Features already implemented will be *italicized*.
 6. *...with notifications in the navbar.*
 7. *Also, a navbar.*
 8. *User created posts!*
-9. ...that can be liked!
+9. *...that can be liked!*
 10. ...and commented upon!
 11. Posts should display content, the author, comments, and likes.
 12. A Facebook-esque Timeline, with recent posts made by the current user and their friends.
