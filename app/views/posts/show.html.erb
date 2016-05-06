@@ -7,7 +7,12 @@
 </div>
 <div class="row">
   <div class="col-md-3">
-    <h3 class-"text-center">Likes</h3>
+    <h3 class-"text-center">Likes (<%= @post.likes.count %>)</h3>
+      <% if @post.likes.any? %>
+        <% @post.likes.each do |like| %>
+          <%= render 'users/user', user: like.user %>
+        <% end %>
+      <% end %>
   </div>
   <div class="col-md-9">
     <h3 class-"text-center">Comments</h3>
