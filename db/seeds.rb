@@ -18,10 +18,18 @@ end
 
 matt = User.first
 User.second.friend(matt)
+matt.accept_friendship(User.second)
 User.last.friend(matt)
+matt.accept_friendship(User.last)
+User.third.friend(matt)
 
 users = User.order(:created_at).take(6)
 50.times do
-  text = Faker::Lorem.paragraph
-  users.each { |user| user.posts.create!(text: text) }
+  text    = Faker::Lorem.paragraph(4)
+  comment = Faker::Lorem.paragraph(2)
+  users.each do |user|
+    post = user.posts.create!(text: text)
+    post.comments.create!(text: comment, user_id: user.id)
+    post.likes.create!(user_id: user.id)
+  end
 end

@@ -12,6 +12,8 @@
                                 data: { confirm: "Are you sure you'd like to delete this comment?" },
                                 method: :delete,
                                 class: "delete_comment" %>
+        <% else %>
+          <br />
         <% end %>
       </li>
     <% end %>

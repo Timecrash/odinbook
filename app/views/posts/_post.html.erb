@@ -10,9 +10,9 @@
     <% else %>
       <%= link_to "Like (#{post.likes.count})", post_likes_path(post_id: post.id),
                                                 method: :post %>
-    <% end %> | 
+    <% end %>
     <% if post.user == current_user %>
-      <%= link_to "Edit", "#", class: "edit_link" %> | 
+       | <%= link_to "Edit", "#", class: "edit_link" %> | 
       <%= link_to "Delete", post_path(post), data: { confirm: "Are you sure you'd like to delete this post?" },
                             method: :delete %>
       <div class="edit_form">
