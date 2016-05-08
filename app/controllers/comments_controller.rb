@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: [:update, :destroy]
   
   def create
-    @comment = current_user.comments.build(comment_params)
+    @comment = Post.find(params[:post_id])
     @comment.post_id = params[:post_id]
     if @comment.save
       redirect_to :back
