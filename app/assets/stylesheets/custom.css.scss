@@ -238,6 +238,10 @@ input {
 
 /* comments */
 
+.post_comments {
+  display: none;
+}
+
 .comments {
   list-style: none;
   padding: 0;
@@ -272,7 +276,6 @@ input {
 }
 
 .comment_form {
-  //display: none;
   color: black;
   font-style: normal;
   font-weight: normal;
