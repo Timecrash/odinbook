@@ -110,9 +110,22 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
-  test "timeline should return a user's posts" do
-    reimu = users(:reimu)
-    assert_equal reimu.timeline, reimu.posts
+  test "timeline should return a user's and their friends' posts" do
+    reimu  = users(:reimu)
+    marisa = users(:marisa)
+    reisen = users(:reisen)
+    #Posts from friend
+    marisa.posts.each do |post_friend|
+      assert reimu.timeline.include?(post_friend)
+    end
+    #Posts from self
+    reimu.posts.each do |post_self|
+      assert reimu.timeline.include?(post_self)
+    end
+    #Posts from unfriended user
+    reisen.posts.each do |post_nonfriend|
+      assert_not reimu.timeline.include?(post_nonfriend)
+    end
   end
   
   test "pending_friend should return any pending friend requests" do

@@ -30,9 +30,8 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
   
-  #To refactor: add posts for friends.
   def timeline
-    self.posts
+    Post.where("user_id IN (?) OR user_id = ?", friend_ids, id)
   end
   
   def friends
@@ -76,8 +75,11 @@ class User < ActiveRecord::Base
   end
   
   private
-  
   def downcase_email
     self.email = email.downcase
+  end
+  
+  def friend_ids
+    friends.map(&:id)
   end
 end

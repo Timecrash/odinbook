@@ -1,25 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 remilia:
-  id: 1
   text: "The Embodiment of Scarlet Devil"
-  user_id: 1
+  user: reimu
   created_at: <%= 10.minutes.ago %>
 
 yuyuko:
-  id: 2
   text: "Perfect Cherry Blossom"
-  user_id: 1
+  user: reimu
   created_at: <%= 3.years.ago %>
 
 eirin:
-  id: 3
   text: "Imperishable Night"
-  user_id: 1
+  user: reimu
   created_at: <%= 2.hours.ago %>
 
 most_recent:
-  id: 4
   text: "Phantasmagoria of Flower View"
-  user_id: 1
+  user: reimu
   created_at: <%= Time.now %>
+  
+kanako:
+  text: "Mountain of Faith"
+  user: marisa
+  created_at: <%= 1.day.ago %>
+  
+utsuho:
+  text: "Subterranean Animism"
+  user: reisen
+  created_at: <%= 2.days.ago %>
