@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     end
   end
   resources :friendships, only: [:create, :update, :destroy]
-  resources :posts, except: [:new, :edit, :index]
-  resources :likes, only: [:create, :destroy]
+  resources :posts,       except: [:new, :edit, :index]
+  resources :likes,       only: [:create, :destroy]
+  resources :comments,    only: [:create, :update, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

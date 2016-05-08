@@ -5,9 +5,15 @@
   </h1>
   <%= link_to pluralize(user.friends.count, "friend"), friends_user_path(user) %>
 </section>
-<section class="post_form">
-  <%= render 'shared/post_form' %>
-</section>
+<% if user == current_user %>
+  <section class="post_form">
+    <%= render 'shared/post_form' %>
+  </section>
+<% else %>
+  <section class="friend_form">
+    <%= render 'shared/friend_form', user: user %>
+  </section>
+<% end %>
 <section class="friend_map">
   <% if user.friends.any? %>
     <div class="user_avatars">

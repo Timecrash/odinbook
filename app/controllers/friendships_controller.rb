@@ -1,8 +1,8 @@
 class FriendshipsController < ApplicationController
   def create
-    @user = User.find(params[:user])
-    current_user.friend(@user)
-    redirect_to :back
+    user = User.find(params[:user])
+    current_user.friend(user)
+    redirect_to :back || user
   end
   
   def update
@@ -15,7 +15,7 @@ class FriendshipsController < ApplicationController
       flash[:success] = "You are now friends with #{user.first_name}!"
       friendship.accept
     end
-    redirect_to :back
+    redirect_to :back || user
   end
   
   def destroy
@@ -23,6 +23,6 @@ class FriendshipsController < ApplicationController
     user = friendship.friender == current_user ? friendship.friended : friendship.friender
     current_user.unfriend(user)
     flash[:success] = "User unfriended."
-    redirect_to :back
+    redirect_to :back || user
   end
 end
