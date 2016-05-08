@@ -2,13 +2,16 @@
   <ul class="comments">
     <% post.comments.each do |comment| %>
       <li id="comment-<%= comment.id %>">
-        <%= link_to avatar(comment.user, size: 50), comment.user %>
-        <span class="user"><%= link_to comment.user.name, comment.user %></span>
-        <span class="text"><%= comment.text %></span>
+        <%= link_to avatar(comment.user, size: 40), comment.user %>
+        <span class="text">
+          <strong><%= link_to comment.user.name, comment.user %></strong>
+          <%= comment.text %>
+        </span>
         <% if comment.user == current_user %>
           <%= link_to "Delete Comment", post_comment_path(id: comment.id, post_id: post.id),
                                 data: { confirm: "Are you sure you'd like to delete this comment?" },
-                                method: :delete %>
+                                method: :delete,
+                                class: "delete_comment" %>
         <% end %>
       </li>
     <% end %>

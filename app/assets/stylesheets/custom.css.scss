@@ -191,7 +191,7 @@ input {
 
 /* posts */
 
-.posts, .comments {
+.posts {
   list-style: none;
   padding: 0;
   li {
@@ -238,11 +238,49 @@ input {
 
 /* comments */
 
+.comments {
+  list-style: none;
+  padding: 0;
+  margin-left: 60px;
+  background-color: $gray-lighter;
+  border-top: 1px solid #66327a;
+  li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+    font-weight: bold;
+  }
+  .text {
+    display: block;
+    margin-left: 50px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .delete_comment {
+    a { color: inherit; }
+    font-size: small;
+    font-style: italic;
+    color: $gray-light;
+    display: block;
+    margin-left: 50px;
+  }
+}
+
 .comment_form {
   //display: none;
   color: black;
   font-style: normal;
   font-weight: normal;
+  margin-left: 60px;
+  textarea {
+    height: 32px;
+    padding-top: 5px;
+  }
 }
 
 aside {
