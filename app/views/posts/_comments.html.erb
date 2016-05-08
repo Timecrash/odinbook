@@ -4,16 +4,11 @@
       <li id="comment-<%= comment.id %>">
         <%= link_to avatar(comment.user, size: 50), comment.user %>
         <span class="user"><%= link_to comment.user.name, comment.user %></span>
-        <span class="timestamp"><%= link_to comment.created_at.strftime("%b %e at %l:%M %p"), comment_path(comment) %></span>
         <span class="text"><%= comment.text %></span>
         <% if comment.user == current_user %>
-           | <%= link_to "Edit", "#", class: "edit_link" %> | 
-          <%= link_to "Delete", post_comment_path(id: comment.id, post_id: post.id),
+          <%= link_to "Delete Comment", post_comment_path(id: comment.id, post_id: post.id),
                                 data: { confirm: "Are you sure you'd like to delete this comment?" },
                                 method: :delete %>
-          <div class="edit_form">
-            <%= render 'shared/edit_form', object: comment %>
-          </div>
         <% end %>
       </li>
     <% end %>

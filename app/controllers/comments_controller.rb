@@ -2,12 +2,14 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: [:update, :destroy]
   
   def create
-    @post = Post.find(params[:post_id])
+    @post    = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
+    @comment.user = current_user
     if @comment.save
       redirect_to :back
     else
       flash[:error] = "Something went wrong!"
+      redirect_to :back
     end
   end
   
