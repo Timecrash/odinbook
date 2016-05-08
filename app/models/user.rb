@@ -31,7 +31,8 @@ class User < ActiveRecord::Base
   end
   
   def timeline
-    Post.where("user_id IN (?) OR user_id = ?", friend_ids, id)
+    Post.where("user_id IN (:friend_ids) OR user_id = :user_id",
+               friend_ids: friend_ids, user_id: id)
   end
   
   def friends
