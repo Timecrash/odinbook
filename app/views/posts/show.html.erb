@@ -1,21 +1,16 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-8">
     <ol class="posts">
       <%= render 'post', post: @post %>
     </ol>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-3 likes">
+
+  <div class="col-md-4 likes">
     <h3 class-"text-center">Likes (<%= @post.likes.count %>)</h3>
-      <% if @post.likes.any? %>
-        <% @post.likes.each do |like| %>
-          <%= render 'users/user', user: like.user %>
-        <% end %>
+    <% if @post.likes.any? %>
+      <% @post.likes.each do |like| %>
+        <%= render 'users/user', user: like.user %>
       <% end %>
-  </div>
-  <div class="col-md-9 comments">
-    <h3 class-"text-center">Comments</h3>
-      <%= render 'comments', post: @post %>
+    <% end %>
   </div>
 </div>
