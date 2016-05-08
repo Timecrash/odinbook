@@ -13,8 +13,8 @@ This is a fully functional social network in the Facebook mold, implementing the
 7. ~~Also, a navbar.~~
 8. ~~User created posts!~~
 9. ~~...that can be liked!~~
-10. ...and commented upon!
-11. Posts should display content, the author, comments, and likes.
+10. ~~...and commented upon!~~
+11. ~~Posts should display content, the author, comments, and likes.~~
 12. A Facebook-esque Timeline, with recent posts made by the current user and their friends.
 13. ~~User profiles, with a Gravatar photo.~~
 14. ~~Profiles should **show** their profile info, photo, and posts.~~
