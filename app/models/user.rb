@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, :omniauth_providers => [:facebook]
   before_save :downcase_email
   
   has_many :active_friendships,  class_name:  "Friendship",
@@ -31,8 +32,7 @@ class User < ActiveRecord::Base
   end
   
   def timeline
-    Post.where("user_id IN (:friend_ids) OR user_id = :user_id",
-               friend_ids: friend_ids, user_id: id)
+    Post.where("user_id IN (?) OR user_id = ?", friend_ids, id)
   end
   
   def friends
