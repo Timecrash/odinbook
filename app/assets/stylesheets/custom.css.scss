@@ -191,7 +191,7 @@ input {
 
 /* posts */
 
-.posts {
+.posts, .comments {
   list-style: none;
   padding: 0;
   li {
@@ -234,6 +234,13 @@ input {
     color: black;
     font-style: normal;
   }
+}
+
+.comment_form {
+  //display: none;
+  color: black;
+  font-style: normal;
+  font-weight: normal;
 }
 
 aside {

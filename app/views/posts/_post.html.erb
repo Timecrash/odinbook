@@ -10,14 +10,17 @@
       <%= link_to "Like (#{post.likes.count})", likes_path(post_id: post.id),
                                                 method: :post %>
     <% end %> | 
-    <%= link_to "Comments", "#" %>
+    <%= link_to "Comments", "#", class: "comment_link" %>
     <% if post.user == current_user %>
        | <%= link_to "Edit", "#", class: "edit_link" %> | 
       <%= link_to "Delete", post_path(post), data: { confirm: "Are you sure you'd like to delete this post?" },
                             method: :delete %>
       <div class="edit_form">
-        <%= render 'shared/edit_form', post: post %>
+        <%= render 'shared/edit_form', object: post %>
       </div>
     <% end %>
+    <div class="post_comments">
+      <%= render 'comments', post: post %>
+    </div>
   </span>
 </li>
