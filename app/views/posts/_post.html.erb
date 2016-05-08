@@ -5,9 +5,10 @@
   <span class="text"><%= post.text %></span>
   <span class="options">
     <% if like = current_user.likes.find_by(post_id: post.id) %>
-      <%= link_to "Unlike (#{post.likes.count})", like_path(like), method: :delete %>
+      <%= link_to "Unlike (#{post.likes.count})", post_like_path(post_id: post.id, id: like.id),
+                                                  method: :delete %>
     <% else %>
-      <%= link_to "Like (#{post.likes.count})", likes_path(post_id: post.id),
+      <%= link_to "Like (#{post.likes.count})", post_likes_path(post_id: post.id),
                                                 method: :post %>
     <% end %> | 
     <%= link_to "Comments", "#", class: "comment_link" %>

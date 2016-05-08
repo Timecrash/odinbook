@@ -16,9 +16,6 @@
   </div>
   <div class="col-md-9 comments">
     <h3 class-"text-center">Comments</h3>
-      <% if @post.comments.any? %>
-        <% @post.comments.each do |comment| %>
-        <% end %>
-      <% end %>
+      <%= render 'comments', post: @post %>
   </div>
 </div>

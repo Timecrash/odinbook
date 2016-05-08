@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
   before_action :correct_user, only: [:update, :destroy]
   
   def create
-    @comment = Post.find(params[:post_id])
-    @comment.post_id = params[:post_id]
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(comment_params)
     if @comment.save
       redirect_to :back
     else
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
   private
   
   def comment_params
-    params.require(:comment).permit(:text, :post_id)
+    params.require(:comment).permit(:text)
   end
   
   def correct_user
