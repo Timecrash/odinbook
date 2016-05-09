@@ -15,7 +15,9 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { host: '0.0.0.0:8080' }
+  config.action_mailer.delivery_method = :test
+  host = 'rails-projects-timecrash1.c9users.io'
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
