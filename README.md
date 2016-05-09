@@ -23,8 +23,8 @@ I only discovered how dependent this app is on it when Heroku suddenly didn't fe
 14. ~~Profiles should **show** their profile info, photo, and posts.~~
 15. ~~An **index** containing users, with buttons for sending/accepting friend requests and pagination.~~
 16. ~~Sign-in via [OmniAuth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview), allowing a user to sign-in through Facebook.~~
-17. A mailer, sending a welcome e-mail for new users and a password retrieval e-mail.
-18. [SendGrid](https://devcenter.heroku.com/articles/sendgrid) to actually send the e-mails.
+17. ~~A mailer, sending a welcome e-mail for new users and a password retrieval e-mail.~~
+18. ~~[SendGrid](https://devcenter.heroku.com/articles/sendgrid) to actually send the e-mails.~~
 19. Posts that can accept images!
 20. ...and can also be uploaded from the client's computer via [Paperclip](https://github.com/thoughtbot/paperclip).
 21. Polymorphic association, which allows users to comment/like posts and photos without (much) extra code.
