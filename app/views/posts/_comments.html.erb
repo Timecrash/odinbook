@@ -2,7 +2,7 @@
   <ul class="comments">
     <% post.comments.each do |comment| %>
       <li id="comment-<%= comment.id %>">
-        <%= link_to avatar(comment.user, size: 40), comment.user %>
+        <%= link_to avatar(comment.user, size: 40, style: :comment), comment.user %>
         <span class="text">
           <strong><%= link_to comment.user.name, comment.user %></strong>
           <%= comment.text %>

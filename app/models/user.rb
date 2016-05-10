@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
   before_save :downcase_email
   
-  has_attached_file :avatar, styles: { medium: "80x80>", small: "40x40>" }
+  has_attached_file :avatar, styles: { avatar: "80x80>", post: "50x50>", comment: "40x40>" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   
   has_many :active_friendships,  class_name:  "Friendship",

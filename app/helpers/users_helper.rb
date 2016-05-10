@@ -1,12 +1,13 @@
 module UsersHelper
   #Returns either the user's uploaded avatar or their Gravatar.
-  def avatar(user, options = { size: 80 })
+  def avatar(user, options = { size: 80, style: :avatar })
     size = options[:size]
+    style = options[:style]
     default = "/avatars/original/missing.png"
     if user.avatar.url == default
       gravatar_for(user, size)
     else
-      image_tag user.avatar.url(:medium)
+      image_tag user.avatar.url(style)
     end
   end
   
