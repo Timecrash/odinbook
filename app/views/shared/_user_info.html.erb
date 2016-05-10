@@ -1,6 +1,6 @@
 <section class="user_info">
   <h1>
-    <%= avatar(user) %>
+    <%= avatar(user, style: :avatar) %>
     <%= user.name %>
   </h1>
   <%= link_to pluralize(user.friends.count, "friend"), friends_user_path(user) %>
@@ -19,7 +19,7 @@
     <div class="user_avatars">
       <h4><%= user.first_name %>'s Friends</h4>
       <% user.friends.each do |friend| %>
-            <%= link_to avatar(friend, size: 40), friend %>
+            <%= link_to avatar(friend, size: 40, style: :small), friend %>
       <% end %>
     </div>
   <% end %>

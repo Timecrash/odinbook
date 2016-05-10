@@ -53,4 +53,5 @@ Rails.application.configure do
       scheme: 'https'
     }
   }
+  
 end
