@@ -17,7 +17,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'
