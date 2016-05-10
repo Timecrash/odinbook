@@ -14,5 +14,6 @@
 
 # Ignore Spring files.
 /spring/*.pid
+/spring-1000/*.pid
 # Ignore application configuration
 /config/application.yml
