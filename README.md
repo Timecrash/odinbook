@@ -2,10 +2,12 @@
 
 The Odin Project's [Final Rails Project](http://www.theodinproject.com/ruby-on-rails/final-project).
 
-This is a fully functional social network in the Facebook mold, implementing the following:
+This is a fully functional social network in the Facebook mold, with friending, likes, comments, the works. You can see it in action on [Heroku](https://velez-odinbook.herokuapp.com/).
 
 Make sure Javascript is enabled on your browser (i.e. if you're running NoScript), but if you're reading this, I probably don't have to tell you that.
 I only discovered how dependent this app is on it when Heroku suddenly didn't feel like working.
+
+Implements the following:
 
 1. ~~PostgreSQL database.~~
 2. ~~Root sign-in page.~~
