@@ -2,7 +2,10 @@
   <%= link_to avatar(post.user, size: 50, style: :post), post.user %>
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="timestamp"><%= link_to post.created_at.strftime("%b %e at %l:%M %p"), post_path(post) %></span>
-  <span class="text"><%= post.text %></span>
+  <span class="text">
+    <%= post.text %>
+    <%= image_tag post.picture.url(:medium) if post.picture? %>
+  </span>
   <span class="options">
     <% if like = current_user.likes.find_by(post_id: post.id) %>
       <%= link_to "Unlike (#{post.likes.count})", post_like_path(post_id: post.id, id: like.id),
