@@ -4,7 +4,7 @@
   <span class="timestamp"><%= link_to post.created_at.strftime("%b %e at %l:%M %p"), post_path(post) %></span>
   <span class="text">
     <%= post.text %>
-    <%= image_tag post.picture.url(:medium) if post.picture? %>
+    <%= image_tag post.image.url(:medium) if post.image? %>
   </span>
   <span class="options">
     <% if like = current_user.likes.find_by(post_id: post.id) %>

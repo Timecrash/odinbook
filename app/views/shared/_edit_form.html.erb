@@ -1,4 +1,15 @@
 <%= form_for post do |f| %>
-  <%= f.text_area :text %>
-  <%= f.submit "Update", class: "btn btn-sm btn-primary" %>
+  <div class="field">
+    <%= f.text_area :text %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :image, "Replace image" %>
+    <%= f.file_field :image %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Update", class: "btn btn-sm btn-primary" %>
+  </div>
+  <br />
 <% end %>
