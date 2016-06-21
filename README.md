@@ -4,6 +4,11 @@ The Odin Project's [Final Rails Project](http://www.theodinproject.com/ruby-on-r
 
 This is a fully functional social network in the Facebook mold, with friending, likes, comments, the works. You can see it in action on [Heroku](https://velez-odinbook.herokuapp.com/).
 
+To log into the app, please use this test account:
+
+e-mail: text@example.com
+password: password
+
 Make sure Javascript is enabled on your browser (i.e. if you're running NoScript), but if you're reading this, I probably don't have to tell you that.
 I only discovered how dependent this app is on it when Heroku suddenly didn't feel like working.
 

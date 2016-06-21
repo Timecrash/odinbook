@@ -3,7 +3,15 @@ matt = User.create!(first_name:            "Matt",
                     email:                 "matt@mattvelez.net",
                     password:              ENV["matt_password"],
                     password_confirmation: ENV["matt_password"])
+
+test = User.create!(first_name:            "Test",
+                    last_name:             "User",
+                    email:                 "test@example.com",
+                    password:              "password",
+                    password_confirmation: "password")
+
 matt.confirm!
+test.confirm!
 
 99.times do |n|
   first_name = Faker::Name.first_name
@@ -23,6 +31,8 @@ matt.accept_friendship(User.second)
 User.last.friend(matt)
 matt.accept_friendship(User.last)
 User.third.friend(matt)
+matt.friend(test)
+User.second.friend(test)
 
 users = User.order(:created_at).take(6)
 50.times do
