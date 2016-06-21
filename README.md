@@ -7,6 +7,7 @@ This is a fully functional social network in the Facebook mold, with friending, 
 To log into the app, please use this test account:
 
 e-mail: text@example.com
+
 password: password
 
 Make sure Javascript is enabled on your browser (i.e. if you're running NoScript), but if you're reading this, I probably don't have to tell you that.
