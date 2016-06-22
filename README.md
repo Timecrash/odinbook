@@ -7,7 +7,7 @@ This is a fully functional social network in the Facebook mold, with friending, 
 To log into the app, please use this test account:
 
 ```
-e-mail:   text@example.com
+e-mail:   test@example.com
 password: password
 ```
 
