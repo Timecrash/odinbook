@@ -270,7 +270,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     nenv (0.3.0)
-    nio4r (2.5.7)
+    nio4r (2.5.8)
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
@@ -303,7 +303,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    puma (4.3.8)
+    puma (4.3.9)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (1.6.13)
@@ -419,7 +419,7 @@ DEPENDENCIES
   omniauth-facebook
   paperclip
   pg (~> 0.15)
-  puma (= 4.3.8)
+  puma (= 4.3.9)
   rails (= 4.2.5)
   rails_12factor
   sass-rails (~> 5.0)
