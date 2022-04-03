@@ -303,7 +303,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    puma (4.3.11)
+    puma (4.3.12)
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (1.6.13)
@@ -419,7 +419,7 @@ DEPENDENCIES
   omniauth-facebook
   paperclip
   pg (~> 0.15)
-  puma (= 4.3.11)
+  puma (= 4.3.12)
   rails (= 4.2.5)
   rails_12factor
   sass-rails (~> 5.0)
